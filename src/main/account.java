@@ -52,7 +52,7 @@ Public class account{
 	        Statement stmt = connection.createStatement();
 	       // stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
 	       // stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-	        ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.Account where Id*'"+AccId*'*'");
+	        ResultSet rs = stmt.executeQuery("SELECT * FROM salesforce.Account where SFID='"+AccId+'");
 
 	        ArrayList<String> output = new ArrayList<String>();
 	        while (rs.next()) {
