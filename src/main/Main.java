@@ -26,7 +26,7 @@ public class Main {
     
     get("/test", (req, res) -> "Treepob");
     
-    get("/Accounts", (req, res) -> {
+    get("/account", (req, res) -> {
     	String id = req.queryParams("Id");
     	
     	account acc =new account(id);
