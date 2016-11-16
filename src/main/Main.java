@@ -3,6 +3,8 @@ import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
 
+import javax.security.auth.login.AccountException;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 
@@ -23,6 +25,14 @@ public class Main {
     get("/hello", (req, res) -> "Hello World");
     
     get("/test", (req, res) -> "Treepob");
+    
+    get("/Accounts", (req, res) -> {
+    	String id = req.queryParams("Id");
+    	
+    	account acc =new account(id);
+    	return acc.Getdetails();
+    } );
+    
 
     get("/", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
